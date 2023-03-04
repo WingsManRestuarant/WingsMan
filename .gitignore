@@ -1,0 +1,27 @@
+# Node.js and NPM
+node_modules/
+package-lock.json
+package.json
+npm-debug.log
+
+# Build output
+build/
+dist/
+
+# Logs and databases
+*.log
+*.sqlite
+
+# Environment variables
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# IDE files
+.vscode/
+.idea/
+
+# Miscellaneous
+.DS_Store
+Thumbs.db
