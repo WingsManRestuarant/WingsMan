@@ -7,7 +7,7 @@ const app = express();
 app.set("view engine", "ejs");
 
 // set the serving static files in the express in a directory named public
-app.use(express.static(__dirname + "/../public"));
+app.use(express.static("public"));
 
 // use bodyParser for URL encoding
 app.use(bodyParser.urlencoded({ extended: true }));
