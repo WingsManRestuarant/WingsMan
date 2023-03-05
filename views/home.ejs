@@ -3,21 +3,26 @@
 
 <head>
     <title><%= title %></title>
-    <link rel="stylesheet" href="/css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet'>
+    <link rel="stylesheet" href="/css/home.css">
 </head>
 
 <body>
-    <%- include ('components/header') %>
+    <%- include ('components/navbar') %>
 
     <!-- Main Content -->
-    <div class="header-left">
-        <h1>Wingman</h1>
-        <p>The only Chicken Wing You will ever need in your entire life</p>
-    </div>
+    <div class="wingsman_home section_padding" id="home">
+        <div class="wingsman_home-content">
+            <h1 class="header_text">Wingman</h1>
+            <p>The only Chicken Wing You will ever need in your entire life</p>
 
-    <div class="header-right">
-        <img src="/images/Wingmanlogo.png" alt="Wingman Logo">
+        </div>
+        <div class="wingsman_home-image">
+            <img src="/images/Wingmanlogo.png" alt="Wingman Logo">
+        </div>
     </div>
+    
+    
 
     <%- include ('components/footer') %>
 
