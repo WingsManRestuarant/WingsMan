@@ -1,0 +1,61 @@
+.wingsman_category-title h1{
+    position: absolute;
+    width: 391px;
+    height: 140px;
+    left: 764px;
+    top: 84px;
+    
+    font-family: 'Kaushan Script';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 100px;
+    line-height: 145px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.04em;
+    text-transform: capitalize;
+    
+    color: #FF5B00;
+    
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.wingsman_category-container{
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 10px 33px;
+gap: 10px;
+margin-top: 2rem ;
+
+position: absolute;
+width: 322px;
+height: 86px;
+left: 799px;
+top: 377px;
+}
+
+.wingsman_category-container #category{
+    width: 180px;
+    height: 40px;
+    
+    font-family: 'Kosugi';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 40px;
+    /* identical to box height */
+    
+    text-transform: capitalize;
+    
+    color: #FF5B00;
+    
+    margin-top: 6rem;
+
+
+
+    border: 1px solid #4169E1;
+    border-radius: 43px;
+}
