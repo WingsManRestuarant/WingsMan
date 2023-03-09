@@ -1,21 +1,29 @@
-<link href='https://fonts.google.com/specimen/Kaushan+Script' rel='stylesheet'>
-<link rel="stylesheet" href="/css/home.css">
-<link rel="stylesheet" href="/css/category.css">
+<link
+  href="https://fonts.google.com/specimen/Kaushan+Script"
+  rel="stylesheet"
+/>
+<link rel="stylesheet" href="/css/home.css" />
+<link rel="stylesheet" href="/css/category.css" />
 
 <div class="wingsman_category">
-    <div class="wingsman_category-title">
-        <h1>Category</h1>
-    </div>
-    <div class="wingsman_category-container">
-        <button id="category" onclick="location.href='/appetizer'">Appetizer</button>
-        <button id="category" onclick="location.href='/main'">Main</button>
-        <button id="category" onclick="location.href='/drink'">Drink</button>
-    </div>
+  <div class="wingsman_category-title">
+    <h1>Category</h1>
+  </div>
+  <div class="wingsman_category-container">
+    <button id="category" onclick="location.href='/category/appetizer'">
+      Appetizer
+    </button>
+    <button id="category" onclick="location.href='/category/main'">Main</button>
+    <button id="category" onclick="location.href='/category/drink'">
+      Drink
+    </button>
+  </div>
 
-    <div class="left picture">
-        <img src="public/images/picture/Category/left.png" alt="left picture">
-    </div>
-    <div class="right picture">
-        <img src="public/images/picture/Category/right.png" alt="right picture">
-    </div>
+  <div class="wingsman_category-image">
+    <img src="/images/picture/Category/left.png" id="left" alt="left picture" />
+    <img src="/images/picture/Category/right.png" id="right" alt="right picture" />
+  </div>
+  
 </div>
+
+<%- include ('components/categoryFooter') %>

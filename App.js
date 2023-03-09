@@ -21,6 +21,15 @@ app.get("/", function (req, res) {
 app.get("/category", function (req, res) {
     res.render("category",)
 });
+app.get("/category/appetizer", function (req, res) {
+    res.render("appetizer",)
+});
+app.get("/category/main", function (req, res) {
+    res.render("main",)
+});
+app.get("/category/drink", function (req, res) {
+    res.render("drink",)
+});
 
 app.listen(3000, function () {
     console.log("Server started on port 3000");
