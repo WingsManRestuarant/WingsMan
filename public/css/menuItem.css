@@ -1,0 +1,65 @@
+.wingsman_menu-item{
+    background-color: F9EFE3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 2rem;
+}
+
+.wingsman_menu-item_title{
+    width: 462px;
+    height: 146px;
+    left: 729px;
+    top: 59px;
+    
+}
+
+.wingsman_menu-item_title h1{
+    font-family: 'Kaushan Script';
+font-style: normal;
+font-weight: 400;
+font-size: 100px;
+line-height: 145px;
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: 0.04em;
+text-transform: capitalize;
+
+color: #FF5B00;
+}
+
+
+.wingsman_menu-item_container{
+    display: flex;
+    flex-direction: row;
+
+    margin-top: 5rem;
+}
+
+.wingsman_menu-item_container-box{
+    box-sizing: border-box;
+
+/* Auto layout */
+
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: 24px 16px;
+gap: 21px;
+
+
+width: 290px;
+height: 530px;
+left: 1288px;
+top: 275px;
+
+background: #FFFDFD;
+/* Gray 4 */
+
+border: 1px solid #BDBDBD;
+box-shadow: -10px 20px 40px -1px rgba(0, 0, 0, 0.2);
+border-radius: 180px 180px 30px 30px;
+}
