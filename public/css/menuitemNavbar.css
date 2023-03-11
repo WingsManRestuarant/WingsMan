@@ -1,9 +1,12 @@
-.wingsman_menu-navbar{
+.wingsman_menu-navbar {
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
-    align-items: center;
-    
-
-    padding: 1rem  6rem;
-}
+  }
+  
+  .wingsman_menu-navbar_back {
+    order: 1; /* display this first */
+  }
+  
+  .wingsman_menu-navbar_cart {
+    order: 2; /* display this last */
+  }
