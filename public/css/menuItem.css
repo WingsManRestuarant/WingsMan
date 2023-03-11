@@ -63,3 +63,85 @@ border: 1px solid #BDBDBD;
 box-shadow: -10px 20px 40px -1px rgba(0, 0, 0, 0.2);
 border-radius: 180px 180px 30px 30px;
 }
+
+.wingsman_menu-item_container-box_image{
+    box-sizing: border-box;
+
+
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+
+/* Neutral/Silver */
+
+border: 0.465252px solid #BBBBBB;
+border-radius: 3.72201px;
+}
+
+.wingsman_menu-item_container-box_addToCart{
+    display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+gap: 10px;
+
+width: 243px;
+height: 90px;
+
+
+/* Inside auto layout */
+
+flex: none;
+order: 3;
+flex-grow: 0;
+}
+.wingsman_menu-item_container-box_addToCart-select select{
+    box-sizing: border-box;
+
+/* Auto layout */
+
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 9px 16px;
+gap: 27px;
+
+width: 243px;
+height: 40px;
+
+background: #FFFFFF;
+/* Gray 2 */
+
+border: 1px solid #4F4F4F;
+border-radius: 25px;
+
+/* Inside auto layout */
+
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;
+}
+
+.wingsman_menu-item_container-box_addToCart-button button{
+    display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 10px 24px 11px;
+gap: 10px;
+
+width: 243px;
+height: 40px;
+
+background: #EC0000;
+color: white;
+border-radius: 25px;
+
+/* Inside auto layout */
+
+flex: none;
+order: 1;
+flex-grow: 0;
+}
