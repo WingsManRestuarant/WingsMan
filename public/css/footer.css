@@ -1,19 +1,18 @@
 #order-now {
-    position: absolute;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #FF6347;
-    color: #FFFFFF;
-    font-size: 1.2rem;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-left: 10%;
-    
-  }
-  
-  #order-now:hover {
-    background-color: #FF4500;
-  }
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ff6347;
+  color: #ffffff;
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 10%;
+}
+
+#order-now:hover {
+  background-color: #ff4500;
+}

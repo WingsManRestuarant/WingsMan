@@ -46,9 +46,9 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-text-align: center;
-font-family: 'Fira Sans';
-font-style: normal;
+  text-align: center;
+  font-family: "Fira Sans";
+  font-style: normal;
   padding: 24px 16px;
   margin-left: 6rem;
   margin-right: 6rem;
@@ -70,6 +70,7 @@ font-style: normal;
   overflow: hidden;
 }
 
+
 .wingsman_menu-item_container-box_image img {
   border: 0.465252px solid #bbbbbb;
 
@@ -80,50 +81,48 @@ font-style: normal;
   object-fit: cover;
 
   filter: drop-shadow(-10px 20px 40px rgba(0, 0, 0, 0.16));
+
+  overflow: hidden;
 }
 
 .wingsman_menu-item_container-box_name {
   display: flex;
-flex-direction: column;
+  flex-direction: column;
 
-padding: 0px;
-gap: 4px;
-width: 258px;
-height: 82px;
-
-margin-top: -20;
-}
-
-.wingsman_menu-item_container-box_name h1{
+  padding: 0px;
+  gap: 4px;
   width: 258px;
-height: 33px;
+  height: 82px;
 
-font-weight: 600;
-font-size: 24px;
-line-height: 32px;
+  margin-top: -20;
 }
 
-.wingsman_menu-item_container-box_name p{
+.wingsman_menu-item_container-box_name h1 {
+  width: 258px;
+  height: 33px;
+
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.wingsman_menu-item_container-box_name p {
   width: 243px;
-height: 45px;
+  height: 45px;
 
-font-weight: 300;
-font-size: 14px;
-line-height: 18px;
-
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 18px;
 }
-
 
 .wingsman_menu-item_container-box_cost {
   width: 258px;
-height: 38px;
-font-weight: 600;
-font-size: 24px;
-line-height: 32px;
-color: #05A84B;
-
+  height: 38px;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 32px;
+  color: #05a84b;
 }
-
 
 .wingsman_menu-item_container-box_addToCart {
   display: flex;

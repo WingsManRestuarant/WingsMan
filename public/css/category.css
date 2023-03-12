@@ -59,19 +59,14 @@
 }
 
 .wingsman_category-image {
-
   display: flex;
   flex-direction: row;
 }
 .wingsman_category-image image {
-    width: 50%;
-    height: 50%;
+  width: 50%;
+  height: 50%;
 }
 
-.wingsman_category-image #right{
-    margin-left: 40%;
+.wingsman_category-image #right {
+  margin-left: 40%;
 }
-
-
-
-
