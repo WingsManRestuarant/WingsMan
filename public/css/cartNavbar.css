@@ -1,0 +1,15 @@
+.wingsman_cart-navbar {
+    color: #ff5b00;
+    display: flex;
+    align-items: center;
+    background: #212121;
+    padding: 0rem 3rem;
+}
+
+.wingsman_cart-navbar_title{
+font-family: 'Quicksand';
+font-style: normal;
+font-weight: 600;
+font-size: 48px;
+
+}
