@@ -1,20 +1,42 @@
-.wingsman_progress{
+.wingsman_progress {
     background-color: #f9efe3;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.wingsman_progress_title p{
+.wingsman_progress_title p {
     color: black;
     text-align: left;
     font-weight: 700;
     font-size: 30;
 }
 
-.wingsman_progress_status p{
+.wingsman_progress_status p {
     color: #7E8389;
     text-align: left;
     font-weight: 400;
     font-size: 25px;
+}
+
+.left-pic {
+    position: absolute;
+    width: 732px;
+    height: 765px;
+    left: -129px;
+    top: 315px;
+
+}
+
+.topRight-pic {
+    position: absolute;
+    width: 531px;
+    height: 822.36px;
+    left: 1944.05px;
+    top: -85px;
+    transform: rotate(47.78deg);
+}
+
+.topLeft-pic {
+
 }

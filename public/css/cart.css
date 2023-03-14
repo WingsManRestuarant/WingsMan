@@ -2,6 +2,34 @@ body {
     background-color: #f9efe3;
 }
 
-.wingsman_cart_bill{
-    
+.wingsman_cart_bill {
+    position: absolute;
+    width: 146px;
+    height: 40px;
+    left: 1426px;
+    top: 265px;
+
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 40px;
+    /* identical to box height */
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #1E1E1E;
+
+}
+
+.pizza {
+    position: absolute;
+width: 383px;
+height: 383px;
+left: 1533px;
+top: 749px;
+
+background: url(Pizza-slice.png);
+
 }
