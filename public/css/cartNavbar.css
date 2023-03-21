@@ -6,10 +6,19 @@
     padding: 0rem 3rem;
 }
 
-.wingsman_cart-navbar_title{
-font-family: 'Quicksand';
-font-style: normal;
-font-weight: 600;
-font-size: 48px;
+.wingsman_cart-navbar_title p {
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 60px;
+    color: #FF5B00;
+}
 
+.wingsman_cart-navbar_image {
+    width: 46px;
+    height: 45.45px;
+    left: 147px;
+    top: 52px;
+    transform: matrix(-1, 0, 0, 1, 0, 0);
 }

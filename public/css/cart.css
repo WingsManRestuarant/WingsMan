@@ -2,11 +2,85 @@ body {
     background-color: #f9efe3;
 }
 
+.wingsman_cart-container_address {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+
+    position: absolute;
+    width: 800px;
+    height: 96px;
+    left: 50px;
+    top: 320px;
+
+    background: rgba(217, 217, 217, 0.59);
+    border-width: 2px 0px 0px 2px;
+    border-style: solid;
+    border-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 10px 19px 30px 2px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(1px);
+    /* Note: backdrop-filter has minimal browser support */
+    border-radius: 10px;
+}
+
+.wingsman_cart-container_address p {
+
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 40px;
+    /* identical to box height */
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #1E1E1E;
+
+}
+
+.wingsman_cart-container_payment p {
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 40px;
+    /* identical to box height */
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #1E1E1E;
+}
+
+.wingsman_cart-container_payment {
+    /* Pay-Method */
+
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+
+    position: absolute;
+    width: 800px;
+    height: 96px;
+    left: 50px;
+    top: 506px;
+
+    background: rgba(217, 217, 217, 0.59);
+    border-width: 2px 0px 0px 2px;
+    border-style: solid;
+    border-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 10px 19px 30px 2px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(1px);
+    /* Note: backdrop-filter has minimal browser support */
+    border-radius: 10px;
+}
+
 .wingsman_cart_bill {
     position: absolute;
     width: 146px;
     height: 40px;
-    left: 1426px;
+    left: 1000px;
     top: 265px;
 
     font-family: 'Quicksand';
@@ -27,7 +101,7 @@ body {
     position: absolute;
     width: 383px;
     height: 383px;
-    left: 1533px;
+    left: 1000px;
     top: 749px;
 
     background: url(Pizza-slice.png);
@@ -57,6 +131,7 @@ body {
     position: absolute;
     width: 275px;
     height: 20px;
+    top: 150;
 
     font-family: 'Quicksand';
     font-style: normal;

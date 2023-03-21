@@ -42,4 +42,20 @@
     height: 58px;
 }
 
+#home {
+    width: 335px;
+    height: 58px;
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #f02c4c;
+    color: #FFFFFF;
+
+}
+
 .topLeft-pic {}
