@@ -25,11 +25,78 @@ body {
 
 .pizza {
     position: absolute;
-width: 383px;
-height: 383px;
-left: 1533px;
-top: 749px;
+    width: 383px;
+    height: 383px;
+    left: 1533px;
+    top: 749px;
 
-background: url(Pizza-slice.png);
+    background: url(Pizza-slice.png);
 
+}
+
+.wingsman_cart_bill-title {
+    position: absolute;
+    width: 146px;
+    height: 40px;
+
+
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 40px;
+    /* identical to box height */
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #1E1E1E;
+}
+
+.wingsman_cart_bill-option {
+    position: absolute;
+    width: 275px;
+    height: 20px;
+
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    /* identical to box height */
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #FF5B00;
+
+}
+
+.wingsman_cart_bill-detail {
+    position: absolute;
+    width: 100px;
+    height: 25px;
+    top: 200;
+
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 25px;
+    /* identical to box height */
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #FF5B00;
+}
+
+.wingsman_cary_bill-button {
+    position: absolute;
+    width: 356px;
+    height: 59px;
+    left: 0px;
+    top: 400px;
+    background: #FF5B00;
+    border-radius: 30px;
 }

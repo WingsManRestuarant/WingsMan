@@ -37,6 +37,9 @@
     transform: rotate(47.78deg);
 }
 
-.topLeft-pic {
-
+.wingsman_progress_button {
+    width: 335px;
+    height: 58px;
 }
+
+.topLeft-pic {}
