@@ -1,4 +1,4 @@
-.wingsman_cart-navbar {
+.wg_cart-navbar {
     color: #ff5b00;
     display: flex;
     align-items: center;
@@ -6,7 +6,7 @@
     padding: 0rem 3rem;
 }
 
-.wingsman_cart-navbar_title p {
+.wg_cart-navbar_title p {
     font-family: 'Quicksand';
     font-style: normal;
     font-weight: 600;
@@ -15,7 +15,7 @@
     color: #FF5B00;
 }
 
-.wingsman_cart-navbar_image {
+.wg_cart-navbar_image {
     width: 46px;
     height: 45.45px;
     left: 147px;

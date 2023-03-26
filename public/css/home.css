@@ -3,14 +3,14 @@
   font-family: "Quicksand", sans-serif;
 }
 
-.wingsman_home {
+.wg_home {
   display: flex;
 
   margin-left: 10%;
   margin-right: 5%;
 }
 
-.wingsman_home-content {
+.wg_home-content {
   flex: 1;
   display: flex;
   justify-content: center;
@@ -20,7 +20,7 @@
   margin-right: 5rem;
 }
 
-.wingsman_home-content h1 {
+.wg_home-content h1 {
   width: 562px;
   height: 125px;
   left: 84px;
@@ -35,7 +35,7 @@
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.wingsman_home-content p {
+.wg_home-content p {
   font-weight: 600;
   font-size: 36px;
   line-height: 45px;
@@ -48,14 +48,14 @@
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.wingsman_home-image {
+.wg_home-image {
   flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.wingsman_home-image img {
+.wg_home-image img {
   width: 100%;
   height: 100%;
 }

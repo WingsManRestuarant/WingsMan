@@ -2,7 +2,7 @@ body {
   background-color: #f9efe3;
 }
 
-.wingsman_menu-item {
+.wg_menu-item {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -11,7 +11,7 @@ body {
   padding: 2rem;
 }
 
-.wingsman_menu-item_title {
+.wg_menu-item_title {
   width: 462px;
   height: 146px;
   left: 729px;
@@ -19,7 +19,7 @@ body {
   margin-top: -3rem;
 }
 
-.wingsman_menu-item_title h1 {
+.wg_menu-item_title h1 {
   font-family: "Kaushan Script";
   font-style: normal;
   font-weight: 400;
@@ -34,13 +34,13 @@ body {
   color: #ff5b00;
 }
 
-.wingsman_menu-item_container {
+.wg_menu-item_container {
   display: flex;
   flex-direction: row;
   margin-top: 7rem;
 }
 
-.wingsman_menu-item_container-box {
+.wg_menu-item_container-box {
   box-sizing: border-box;
   /* Auto layout */
   display: flex;
@@ -71,7 +71,7 @@ body {
 }
 
 
-.wingsman_menu-item_container-box_image img {
+.wg_menu-item_container-box_image img {
   border: 0.465252px solid #bbbbbb;
 
   /* Add border-radius to round the image */
@@ -85,7 +85,7 @@ body {
   overflow: hidden;
 }
 
-.wingsman_menu-item_container-box_name {
+.wg_menu-item_container-box_name {
   display: flex;
   flex-direction: column;
 
@@ -97,7 +97,7 @@ body {
   margin-top: -20;
 }
 
-.wingsman_menu-item_container-box_name h1 {
+.wg_menu-item_container-box_name h1 {
   width: 258px;
   height: 33px;
 
@@ -106,7 +106,7 @@ body {
   line-height: 32px;
 }
 
-.wingsman_menu-item_container-box_name p {
+.wg_menu-item_container-box_name p {
   width: 243px;
   height: 45px;
 
@@ -115,7 +115,7 @@ body {
   line-height: 18px;
 }
 
-.wingsman_menu-item_container-box_cost {
+.wg_menu-item_container-box_cost {
   width: 258px;
   height: 38px;
   font-weight: 600;
@@ -124,7 +124,7 @@ body {
   color: #05a84b;
 }
 
-.wingsman_menu-item_container-box_addToCart {
+.wg_menu-item_container-box_addToCart {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -140,7 +140,7 @@ body {
   order: 3;
   flex-grow: 0;
 }
-.wingsman_menu-item_container-box_addToCart-select select {
+.wg_menu-item_container-box_addToCart-select select {
   box-sizing: border-box;
 
   /* Auto layout */
@@ -168,7 +168,7 @@ body {
   flex-grow: 0;
 }
 
-.wingsman_menu-item_container-box_addToCart-button button {
+.wg_menu-item_container-box_addToCart-button button {
   display: flex;
   flex-direction: row;
   justify-content: center;

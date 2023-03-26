@@ -1,4 +1,4 @@
-.wingsman_category-title h1 {
+.wg_category-title h1 {
   position: absolute;
   width: 391px;
   height: 140px;
@@ -21,7 +21,7 @@
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.wingsman_category-container {
+.wg_category-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -37,7 +37,7 @@
   top: 377px;
 }
 
-.wingsman_category-container #category {
+.wg_category-container #category {
   width: 180px;
   height: 40px;
 
@@ -58,15 +58,15 @@
   border-radius: 43px;
 }
 
-.wingsman_category-image {
+.wg_category-image {
   display: flex;
   flex-direction: row;
 }
-.wingsman_category-image image {
+.wg_category-image image {
   width: 50%;
   height: 50%;
 }
 
-.wingsman_category-image #right {
+.wg_category-image #right {
   margin-left: 40%;
 }

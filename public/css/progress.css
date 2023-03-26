@@ -1,18 +1,18 @@
-.wingsman_progress {
+.wg_progress {
     background-color: #f9efe3;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.wingsman_progress_title p {
+.wg_progress_title p {
     color: black;
     text-align: left;
     font-weight: 700;
     font-size: 30;
 }
 
-.wingsman_progress_status p {
+.wg_progress_status p {
     color: #7E8389;
     text-align: left;
     font-weight: 400;
@@ -37,7 +37,7 @@
     transform: rotate(47.78deg);
 }
 
-.wingsman_progress_button {
+.wg_progress_button {
     width: 335px;
     height: 58px;
 }
@@ -58,4 +58,3 @@
 
 }
 
-.topLeft-pic {}
