@@ -1,41 +1,54 @@
+<!-- leaflet map -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+    integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
+
 <link rel="stylesheet" href="/css/progress.css">
 
+<!-- Make sure you put this AFTER Leaflet's CSS -->
+<script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+    integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+
+
 <%- include ('components/cartNavbar') %>
+    <div id="map"></div>
 
-<div class="wg_progress">
-    <div class="wg_progress_title">
-        <p>Your order is being prepared</p>
-    </div>
-    <div class="wg_progress_status">
-        <p>Arriving in 10-20 min</p>
-    </div>
-    <div class="wg_progress_status-bar">
-        <progress id="file" value="32" max="100"> 32% </progress>
-    </div>
-    <div class="wg_progress_map">
-        <div class="wg_progress_map-api">
+    <div class="wg_progress">
 
+        <div class="wg_progress_title">
+            <p>Your order is being prepared</p>
         </div>
-        <div class="wg_progress_map-detail">
-            <div class="wg_progress_map-detail_time">
-                <h1>10:00 PM</h1>
-                <p>Estimated Delivery Time</p>
+        <div class="wg_progress_status">
+            <p>Arriving in 10-20 min</p>
+        </div>
+        <div class="wg_progress_status-bar">
+            <progress id="file" value="32" max="100"> 32% </progress>
+        </div>
+        <div class="wg_progress_map">
+            <div class="wg_progress_map-api">
+
             </div>
-            <div class="wg_progress_map-detail_address">
-                <h1>Delivery Address</h1>
-                <p>Chiang Mai Thailand</p>
-            </div>
-            <div class="wg_progress_map-detail_order">
-                <h1>Order Details</h1>
-                <p>Pizza</p>
+            <div class="wg_progress_map-detail">
+                <div class="wg_progress_map-detail_time">
+                    <h1>10:00 PM</h1>
+                    <p>Estimated Delivery Time</p>
+                </div>
+                <div class="wg_progress_map-detail_address">
+                    <h1>Delivery Address</h1>
+                    <p>Chiang Mai Thailand</p>
+                </div>
+                <div class="wg_progress_map-detail_order">
+                    <h1>Order Details</h1>
+                    <p>Pizza</p>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="wg_progress_button">
-        <button id="home" onclick="location.href='/'">Home</button>
-    </div>
-    
-    <!-- <div class="left-pic">
+        <div class="wg_progress_button">
+            <button id="home" onclick="location.href='/'">Home</button>
+        </div>
+
+
+
+        <!-- <div class="left-pic">
         <img src="images/Progress/hands-taking-pizza 1.png" alt="">
     </div>
 
@@ -46,4 +59,27 @@
     <div class="topLeft-pic">
         <img src="images/Progress/Haldi 1.png" alt="">
     </div> -->
-</div>
+
+    </div>
+
+    <!-- script map -->
+    <script>
+        var map = L.map('map').setView([18.800886, 98.950828], 14);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+
+        var marker = L.marker([18.800886, 98.950828]).addTo(map);
+        marker.bindPopup("You are here");
+
+        var circle = L.circle([18.810645, 98.947943], {
+            color: 'red',
+            fillColor: '#f03',
+            fillOpacity: 0.5,
+            radius: 100
+        }).addTo(map);
+        circle.bindPopup("Your driver");
+
+
+    </script>
