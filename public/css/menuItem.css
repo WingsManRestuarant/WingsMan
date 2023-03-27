@@ -80,8 +80,6 @@ body {
   /* Make sure the image fills the container */
   object-fit: cover;
 
-  filter: drop-shadow(-10px 20px 40px rgba(0, 0, 0, 0.16));
-
   overflow: hidden;
 }
 

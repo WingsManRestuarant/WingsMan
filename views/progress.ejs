@@ -70,16 +70,18 @@
             attribution: '© OpenStreetMap contributors'
         }).addTo(map);
 
+        // user location
         var marker = L.marker([18.800886, 98.950828]).addTo(map);
         marker.bindPopup("You are here");
 
+        // fixed restaurant coordinate 
         var circle = L.circle([18.810645, 98.947943], {
             color: 'red',
             fillColor: '#f03',
             fillOpacity: 0.5,
             radius: 100
         }).addTo(map);
-        circle.bindPopup("Your driver");
+        circle.bindPopup("Wingsman Restaurant");
 
 
     </script>
