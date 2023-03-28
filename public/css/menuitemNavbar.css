@@ -1,18 +1,15 @@
 .wg_menu-navbar {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
-.wg_menu-navbar_back {
-  order: 1; /* display this first */
-
+.wg_menu-navbar button:nth-child(2) {
+  margin-left: auto;
 }
 
-.wg_menu-navbar_cart {
-  order: 2; /* display this last */
-}
 
-button{
+button {
   background: none;
   border: none;
   padding: 0;

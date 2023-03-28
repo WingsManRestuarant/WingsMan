@@ -9,49 +9,49 @@
     integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
 
 
-<%- include ('components/cartNavbar') %>
-    <div id="map"></div>
+<!-- <%- include ('components/cartNavbar') %> -->
+<div class="wg_cart-navbar">
+    <div class="wg_cart-navbar_image">
+        <img src="/images/icon _Pizza Slice_.png" alt="">
+    </div>
+    <div class="wg_cart-navbar_title">
+        <p>Wingman</p>
+    </div>
+</div>
 
-    <div class="wg_progress">
+<div id="map"></div>
 
-        <div class="wg_progress_title">
-            <p>Your order is being prepared</p>
-        </div>
-        <div class="wg_progress_status">
-            <p>Arriving in 10-20 min</p>
-        </div>
-        <div class="wg_progress_status-bar">
-            <progress id="file" value="32" max="100"> 32% </progress>
-        </div>
-        <div class="wg_progress_map">
-            <div class="wg_progress_map-api">
+<div class="wg_progress">
+    <p id="title">Your order is being prepared</p>
+    <p id="detail">Arriving in 30 mins</p>
+    <progress id="file" value="32" max="100"> 32% </progress>
 
-            </div>
-            <div class="wg_progress_map-detail">
-                <div class="wg_progress_map-detail_time">
-                    <h1>10:00 PM</h1>
-                    <p>Estimated Delivery Time</p>
-                </div>
-                <div class="wg_progress_map-detail_address">
-                    <h1>Delivery Address</h1>
-                    <p>Chiang Mai Thailand</p>
-                </div>
-                <div class="wg_progress_map-detail_order">
-                    <h1>Order Details</h1>
-                    <p>Pizza</p>
-                </div>
-            </div>
-        </div>
-        <div class="wg_progress_button">
-            <button id="home" onclick="location.href='/'">Home</button>
-        </div>
+</div>
 
-
-
-        <!-- <div class="left-pic">
-        <img src="images/Progress/hands-taking-pizza 1.png" alt="">
+</div>
+<div class="wg_progress-detail">
+    <div class="wg_progress_map-detail_time">
+        <h1 id="delivery-time"></h1>
+        <p>Estimated Delivery Time</p>
+    </div>
+    <div class="wg_progress_map-detail_address">
+        <h1>Delivery Address</h1>
+        <p>Chiang Mai Thailand</p>
+    </div>
+    <div class="wg_progress_map-detail_order">
+        <h1>Order Details</h1>
+        <p>Pizza</p>
     </div>
 
+</div>
+<div class="wg_progress_button">
+    <button id="home" onclick="location.href='/'">Home</button>
+</div>
+
+<!-- <div class="left-pic">
+        <img src="images/Progress/hands-taking-pizza 1.png" alt="">
+    </div>
+    
     <div class="topRight-pic">
         <img src="images/Progress/Capcicum 1.png" alt="">
     </div>
@@ -60,28 +60,43 @@
         <img src="images/Progress/Haldi 1.png" alt="">
     </div> -->
 
-    </div>
 
-    <!-- script map -->
-    <script>
-        var map = L.map('map').setView([18.800886, 98.950828], 14);
+<script>
+    // leaflet script
+    var map = L.map('map').setView([18.800886, 98.950828], 14);
 
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '© OpenStreetMap contributors'
-        }).addTo(map);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '© OpenStreetMap contributors'
+    }).addTo(map);
 
-        // user location
-        var marker = L.marker([18.800886, 98.950828]).addTo(map);
-        marker.bindPopup("You are here");
+    // user location
+    var marker = L.marker([18.800886, 98.950828]).addTo(map);
+    marker.bindPopup("You are here");
 
-        // fixed restaurant coordinate 
-        var circle = L.circle([18.810645, 98.947943], {
-            color: 'red',
-            fillColor: '#f03',
-            fillOpacity: 0.5,
-            radius: 100
-        }).addTo(map);
-        circle.bindPopup("Wingsman Restaurant");
+    // fixed restaurant coordinate 
+    var circle = L.circle([18.810645, 98.947943], {
+        color: 'red',
+        fillColor: '#f03',
+        fillOpacity: 0.5,
+        radius: 100
+    }).addTo(map);
+    circle.bindPopup("Wingsman Restaurant");
 
+    // Get the current time
+    var now = new Date();
 
-    </script>
+    // Add 30 minutes to the current time
+    var deliveryTime = new Date(now.getTime() + 30 * 60000); // 60000 ms = 1 minute
+
+    // Format the delivery time as HH:MM AM/PM
+    var hours = deliveryTime.getHours();
+    var minutes = deliveryTime.getMinutes();
+    var ampm = hours >= 12 ? 'PM' : 'AM';
+    hours = hours % 12;
+    hours = hours ? hours : 12;
+    minutes = minutes < 10 ? '0' + minutes : minutes;
+    var formattedTime = hours + ':' + minutes + ' ' + ampm;
+
+    // Set the formatted delivery time as the content of the h1 element
+    document.getElementById('delivery-time').textContent = formattedTime;
+</script>

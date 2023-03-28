@@ -1,11 +1,18 @@
-.wg_category-title h1 {
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@900&family=Kaushan+Script&family=Kosugi&display=swap');
+
+.wg_category {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.wg_category h1 {
   position: absolute;
   width: 391px;
   height: 140px;
-  left: 764px;
   top: 84px;
-
-  font-family: "Kaushan Script";
+  font-family: 'Kaushan Script', cursive;
   font-style: normal;
   font-weight: 400;
   font-size: 100px;
@@ -15,9 +22,7 @@
   text-align: center;
   letter-spacing: 0.04em;
   text-transform: capitalize;
-
   color: #ff5b00;
-
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
@@ -26,34 +31,38 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 10px 33px;
   gap: 10px;
   margin-top: 2rem;
-
   position: absolute;
-  width: 322px;
-  height: 86px;
-  left: 799px;
-  top: 377px;
+  top: 35%;
 }
 
 .wg_category-container #category {
-  width: 180px;
-  height: 40px;
-
-  font-family: "Kosugi";
+  width: 250px;
+  height: 60px;
+  font-family: 'Kosugi', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 40px;
   line-height: 40px;
-  /* identical to box height */
-
   text-transform: capitalize;
-
   color: #ff5b00;
-
   margin-top: 6rem;
+  border: 1px solid #4169e1;
+  border-radius: 43px;
+}
 
+.wg_category-container #appetizer {
+  width: 250px;
+  height: 60px;
+  font-family: 'Kosugi', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 40px;
+  text-transform: capitalize;
+  color: #ff5b00;
+  margin-top: 0;
   border: 1px solid #4169e1;
   border-radius: 43px;
 }
@@ -61,12 +70,53 @@
 .wg_category-image {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
 }
-.wg_category-image image {
+
+.wg_category-image img {
   width: 50%;
   height: 50%;
 }
 
+
 .wg_category-image #right {
+  position: relative;
   margin-left: 40%;
+  left: -120;
+
+}
+
+.wg_category-image #left {
+  position: relative;
+  left: -200;
+
+}
+
+.cart button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 33px;
+  gap: 10px;
+  position: relative;
+  width: 210px;
+  height: 55px;
+  background: #AC2222;
+  border-radius: 43px;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  color: #AC2222;
+  left: 600;
+}
+
+/* make svg transparent and blend in with the button */
+.cart button svg {
+  background-color: transparent;
+
 }

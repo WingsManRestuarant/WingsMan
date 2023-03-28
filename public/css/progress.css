@@ -1,33 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;600&display=swap');
+
 body {
     background-color: #f9efe3;
+    font-family: 'Quicksand';
 
+}
+
+.wg_cart-navbar {
+    color: #ff5b00;
+    display: flex;
+    align-items: center;
+    font-size: 40px;
+    font-weight: bold;
+    justify-content: center;
+}
+
+.wg_cart-navbar_image {
+    width: 46px;
+    height: 45.45px;
+    left: 147px;
+    top: 52px;
 }
 
 .wg_progress {
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-size: 25px;
+    text-align: left;
+
+
 }
 
-.wg_progress_title p {
+.wg_progress #title {
     color: black;
     text-align: left;
-    font-weight: 700;
-    font-size: 30;
+    font-weight: bold;
+    font-size: 30px;
+
 }
 
-.wg_progress_status p {
-    color: #7E8389;
-    text-align: left;
-    font-weight: 400;
-    font-size: 25px;
+.wg_progress #detail {
+    left: 0%;
+
 }
 
-.left-pic {
+#file {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: red;
+}
+
+
+.wg_progress-detail {
+    position: absolute;
+    top: 60%;
+    right: 300;
+    transform: translate(-50%, -50%);
+}
+
+.wg_progress_map-detail_time,
+.wg_progress_map-detail_address,
+.wg_progress_map-detail_order {
+    border-bottom: 0.25px solid black;
+}
+
+/* .left-pic {
     position: absolute;
     width: 732px;
     height: 765px;
-    left: -129px;
+    left: -300px;
     top: 315px;
 
 }
@@ -36,10 +78,15 @@ body {
     position: absolute;
     width: 531px;
     height: 822.36px;
-    left: 1944.05px;
+    left: 750px;
     top: -85px;
-    transform: rotate(47.78deg);
 }
+
+.topRight-pic {
+    position: absolute;
+    left: 750px;
+    top: -85px;
+} */
 
 .wg_progress_button {
     width: 335px;
@@ -49,7 +96,6 @@ body {
 #home {
     width: 335px;
     height: 58px;
-    font-family: 'Quicksand';
     font-style: normal;
     font-weight: 700;
     font-size: 20px;
@@ -60,12 +106,16 @@ body {
     background-color: #f02c4c;
     color: #FFFFFF;
 
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 #map {
+    position: absolute;
     width: 335px;
     height: 335px;
-    border-radius: 5px;
-    overflow: hidden;
-
+    top: 450px;
+    left: 300px;
 }

@@ -1,4 +1,4 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@1,300;1,500&family=Kaushan+Script&display=swap');body {
   background-color: #f9efe3;
 }
 
@@ -25,10 +25,7 @@ body {
   font-weight: 400;
   font-size: 100px;
   line-height: 145px;
-  display: flex;
-  align-items: center;
   text-align: center;
-  letter-spacing: 0.04em;
   text-transform: capitalize;
 
   color: #ff5b00;

@@ -1,6 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
 body {
     background-color: #f9efe3;
 }
+
+.wg_cart-navbar {
+    color: #ff5b00;
+    display: flex;
+    align-items: center;
+    font-size: 40px;
+    font-weight: bold;
+    justify-content: center;
+}
+
+.wg_cart-navbar_image {
+    width: 46px;
+    height: 45.45px;
+    left: 147px;
+    top: 52px;
+}
+
 
 .wg_cart-container_address {
     box-sizing: border-box;
