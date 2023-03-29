@@ -8,44 +8,19 @@
   </div>
 
   <div class="wg_menu-item_container">
-    <form action="/add-to-cart" method="post">
-      <div class="wg_menu-item_container-box">
-        <div class="wg_menu-item_container-box_image">
-          <img src="/images/Drink/Coffee.png" alt="" />
-        </div>
-        <div class="wg_menu-item_container-box_name">
-          <h1>Coffee</h1>
-          <p>Freshly brewed coffee</p>
-        </div>
-        <div class="wg_menu-item_container-box_cost">
-          <p>cost</p>
-        </div>
-        <div class="wg_menu-item_container-box_addToCart">
-          <div class="wg_menu-item_container-box_addToCart-select">
-            <select name="size" id="ItemSize">
-              <option value="regular">Regular</option>
-              <option value="large">Large</option>
-              <option value="Extra-Large">Extra Large</option>
-            </select>
-          </div>
-          <div class="wg_menu-item_container-box_addToCart-button">
-            <button>ADD TO CART</button>
-          </div>
-        </div>
-      </div>
-    </form>
 
+    <% products.forEach(function(product) { %>
     <form action="/add-to-cart" method="post">
       <div class="wg_menu-item_container-box">
         <div class="wg_menu-item_container-box_image">
-          <img src="/images/Drink/Tea.png" alt="" />
+          <img src="<%= product.imagePath %>" alt="" />
         </div>
         <div class="wg_menu-item_container-box_name">
-          <h1>Tea</h1>
-          <p>Freshly made tea</p>
+          <h1><%= product.title %></h1>
+          <p><%= product.description %></p>
         </div>
         <div class="wg_menu-item_container-box_cost">
-          <p>cost</p>
+          <p><%= product.price %></p>
         </div>
         <div class="wg_menu-item_container-box_addToCart">
           <div class="wg_menu-item_container-box_addToCart-select">
@@ -61,32 +36,6 @@
         </div>
       </div>
     </form>
-
-    <form action="/add-to-cart" method="post">
-      <div class="wg_menu-item_container-box">
-        <div class="wg_menu-item_container-box_image">
-          <img src="/images/Drink/Tea&Donut.png" alt="" />
-        </div>
-        <div class="wg_menu-item_container-box_name">
-          <h1>Tea and Donut</h1>
-          <p>Bundle together</p>
-        </div>
-        <div class="wg_menu-item_container-box_cost">
-          <p>cost</p>
-        </div>
-        <div class="wg_menu-item_container-box_addToCart">
-          <div class="wg_menu-item_container-box_addToCart-select">
-            <select name="size" id="ItemSize">
-              <option value="regular">Regular</option>
-              <option value="large">Large</option>
-              <option value="Extra-Large">Extra Large</option>
-            </select>
-          </div>
-          <div class="wg_menu-item_container-box_addToCart-button">
-            <button>ADD TO CART</button>
-          </div>
-        </div>
-      </div>
-    </form>
+    <% }); %>
   </div>
 </div>

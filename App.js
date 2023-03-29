@@ -7,7 +7,12 @@ const cookieParser = require("cookie-parser")
 const bcrypt = require("bcrypt");
 const { body, validationResult } = require("express-validator");
 const mongoose = require('mongoose');
+const Product =require('./models/Product')
+
+
 const db = require('./utils/db');
+const shopRoutes = require('./routes/shop');
+const products = require("./data/products");
 
 
 
@@ -35,6 +40,7 @@ const isLoggedIn = (req, res, next) => {
   next();
 };
 
+app.use(shopRoutes);
 
 
 app.get("/", function(req, res) {
@@ -55,8 +61,16 @@ app.get("/category/main", isLoggedIn, function(req, res) {
   res.render("main");
 });
 
-app.get("/category/drink", isLoggedIn, function(req, res) {
-  res.render("drink");
+app.get("/category/drink", isLoggedIn, function(req, res , next) {
+  Product.find(function(err,docs){
+    var productChunks =[];
+    var chunkSize = 3;
+    for(var i = 0; i< docs.length; i += chunkSize){
+      productChunks.push(docs.slice(i,i+chunkSize));
+    }
+    res.render("drink", {title: 'Shopping Cart', products: products});
+  });
+  
 });
 
 app.get("/cart",isLoggedIn, function(req, res) {

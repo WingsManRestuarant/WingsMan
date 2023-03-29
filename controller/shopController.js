@@ -3,7 +3,7 @@ const Product = require('../models/Product');
 exports.getAllProducts = (req, res, next) => {
     Product.find()
         .then(products => {
-            res.render('index', { name: 'Josh', prods: products, path: '/', pageTitle: 'Home' });
+            res.render('drink', { products });
         })
         .catch(err => console.log(err));
 };

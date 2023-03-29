@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const products = require("../data/products");
 const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
@@ -18,7 +19,7 @@ const userSchema = new Schema({
     items: [{
         productId: {
             type: mongoose.Types.ObjectId,
-            ref: 'Product',
+            ref: 'products',
             required: true
         },
         qty: {
@@ -31,10 +32,10 @@ const userSchema = new Schema({
 });
 
 userSchema.methods.addToCart = async function(productId) {
-  const product = await Product.findById(productId);
-  if (product) {
+  const product = await products.findById(productId);
+  if (products) {
       const cart = this.cart;
-      const isExisting = cart.items.findIndex(objInItems => new String(objInItems.productId).trim() === new String(product._id).trim());
+      const isExisting = cart.items.findIndex(objInItems => new String(objInItems.productId).trim() === new String(products._id).trim());
       if (isExisting >= 0) {
           cart.items[isExisting].qty += 1;
       } else {
