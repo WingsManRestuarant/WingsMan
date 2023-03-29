@@ -3,46 +3,44 @@ const bodyParser = require("body-parser");
 const ejs = require("ejs");
 const app = express();
 const session = require("express-session");
+const cookieParser = require("cookie-parser")
 const bcrypt = require("bcrypt");
 const { body, validationResult } = require("express-validator");
+const mongoose = require('mongoose');
 
-const mongoose = require("mongoose");
-mongoose.connect("mongodb+srv://admin:admin@cluster0.u8eno7n.mongodb.net/?retryWrites=true&w=majority", {
+
+const db = mongoose.connection;
+mongoose.connect('mongodb+srv://admin:admin@cluster0.u8eno7n.mongodb.net/test', {
   useNewUrlParser: true,
   useUnifiedTopology: true
 });
 
-const userSchema = new mongoose.Schema({
-  email: String,
-  password: String
-});
 
-const User = mongoose.model("User", userSchema);
+db.on("error", () => console.log("Error in connecting to database"));
+db.once("open", () => console.log("Connected to Database"));
 
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
+
+
+app.use(cookieParser());
 app.use(
   session({
-    secret: "secret",
+    secret: 'my_super_secret',
     resave: false,
     saveUninitialized: false
   })
 );
 
-const ifNotLoggedin = (req, res, next) => {
-  if (!req.session.isLoggedIn) {
-    return res.render("login");
+const isLoggedIn = (req, res, next) => {
+  if (!req.session.user) {
+    return res.redirect('/login');
   }
   next();
 };
 
-const ifLoggedin = (req, res, next) => {
-  if (req.session.isLoggedIn) {
-    return res.redirect("/category");
-  }
-  next();
-};
+
 
 app.get("/", function(req, res) {
   res.render("home", {
@@ -50,85 +48,90 @@ app.get("/", function(req, res) {
   });
 });
 
-app.get("/category", ifNotLoggedin, function(req, res) {
+app.get("/category", isLoggedIn,  function(req, res) {
   res.render("category");
 });
 
-app.get("/category/appetizer", ifNotLoggedin, function(req, res) {
+app.get("/category/appetizer", isLoggedIn, function(req, res) {
   res.render("appetizer");
 });
 
-app.get("/category/main", ifNotLoggedin, function(req, res) {
+app.get("/category/main", isLoggedIn, function(req, res) {
   res.render("main");
 });
 
-app.get("/category/drink", ifNotLoggedin, function(req, res) {
+app.get("/category/drink", isLoggedIn, function(req, res) {
   res.render("drink");
 });
 
-app.get("/cart", ifNotLoggedin, function(req, res) {
+app.get("/cart",isLoggedIn, function(req, res) {
   res.render("cart");
 });
 
-app.get("/progress", ifNotLoggedin, function(req, res) {
+app.get("/progress", isLoggedIn, function(req, res) {
   res.render("progress");
 });
 
-app.get("/login", ifLoggedin, (req, res) => {
+//Login sec
+app.get("/login",  (req, res) => {
   res.render("login");
   
 });
+app.post("/login", async (request, response) => {
+  try {
+    //adding
+    const email = request.body.email;
+    const password = request.body.password;
+    const usermail = db
+      .collection("users")
+      .findOne({ email: email }, (err, res) => {
+        if (res == null) {
+          // Show the message in a popup window
+          return response.send(
+            "<script>alert('Invalid account information! To gain access to the application, Please signup first.'); location.href='login'</script>");
+        } else if (err) throw err;
 
-app.post(
-    "/login",
-    ifLoggedin,
-    [
-      body("email").custom(value => {
-        return User.findOne({ email: value }).then(user => {
-          if (!user) {
-            return Promise.reject("Invalid Email Address!");
-          }
-          return true;
-        });
-      }),
-      body("password", "Password is empty").trim().not().isEmpty()
-    ],
-    (req, res) => {
-      const errors = validationResult(req);
-      if (!errors.isEmpty()) {
-        return res.render("login", {
-          login_errors: errors.array()
-        });
-      }
-  
-      User.findOne({ email: req.body.email }).then(user => {
-        console.log("user", user);
-        bcrypt.compare(req.body.password, user.password).then(match => {
-          console.log("match", match);
-          if (match) {
-            req.session.isLoggedIn = true;
-            req.session.userID = user._id;
-            console.log("logged in");
-            res.redirect("/category");
-          } else {
-            return res.render("login", {
-              login_errors: [{ msg: "Invalid Password" }]
-            });
-          }
-        });
-      }).catch(err => {
-        console.log("error", err);
-        
-        return res.render("login", {
-          login_errors: [{ msg: "Something went wrong" }]
-        });
+        if (res.password === password) {  //* Login success
+          request.session.user = email;
+          return response.redirect("category");
+        } else {
+          // Show the message in a popup window
+          return response.send(
+            "<script>alert('The Email or password you entered is incorrect! Please try again.'); location.href='login';</script>");
+        }
       });
-    }
-    
-  );
-  
+  } catch (error) {
+    // Show the message in a popup window
+    return response.send("<script>alert('Error! Please try again later.');</script>");
+  }
+});
+
+
+//Register sec
+app.get("/register", (req, res) => {
+  res.render("register");
+});
+
+app.post("/register", async (request, response) => {
+  const name = request.body.name;
+  const email = request.body.email;
+  const password = request.body.password;
+
+  const data = {
+      "name": name,
+      "email" : email,
+      "password" : password
+  }
+  db.collection('users').insertOne(data,(err,collection)=>{
+      if(err){
+          throw err;
+      }
+      console.log("Record Inserted Successfully");
+  });
+  return response.redirect("category")
+})
+
 
 app.listen(3000, function() {
-  console.log("Server started on port 3000");
   console.log("Server started on port 3000");
 });
