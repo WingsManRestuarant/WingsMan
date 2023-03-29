@@ -15,40 +15,41 @@ const userSchema = new Schema({
   password: {
     type: String,
     required: true
-  },cart: {
-    items: [{
-        productId: {
-            type: mongoose.Types.ObjectId,
-            ref: 'products',
-            required: true
-        },
-        qty: {
-            type: Number,
-            required: true
-        }
-    }],
-    totalPrice: Number
-}
+  }
+//   ,cart: {
+//     items: [{
+//         productId: {
+//             type: mongoose.Types.ObjectId,
+//             ref: 'products',
+//             required: true
+//         },
+//         qty: {
+//             type: Number,
+//             required: true
+//         }
+//     }],
+//     totalPrice: Number
+// }
 });
 
-userSchema.methods.addToCart = async function(productId) {
-  const product = await products.findById(productId);
-  if (products) {
-      const cart = this.cart;
-      const isExisting = cart.items.findIndex(objInItems => new String(objInItems.productId).trim() === new String(products._id).trim());
-      if (isExisting >= 0) {
-          cart.items[isExisting].qty += 1;
-      } else {
-          cart.items.push({ productId: product._id, qty: 1 });
-      }
-      if (!cart.totalPrice) {
-          cart.totalPrice = 0;
-      }
-      cart.totalPrice += product.price;
-      return this.save();
-  }
+// userSchema.methods.addToCart = async function(productId) {
+//   const product = await products.findById(productId);
+//   if (products) {
+//       const cart = this.cart;
+//       const isExisting = cart.items.findIndex(objInItems => new String(objInItems.productId).trim() === new String(products._id).trim());
+//       if (isExisting >= 0) {
+//           cart.items[isExisting].qty += 1;
+//       } else {
+//           cart.items.push({ productId: product._id, qty: 1 });
+//       }
+//       if (!cart.totalPrice) {
+//           cart.totalPrice = 0;
+//       }
+//       cart.totalPrice += product.price;
+//       return this.save();
+//   }
 
-};
+// };
 
 const User = mongoose.model("User", userSchema);
 

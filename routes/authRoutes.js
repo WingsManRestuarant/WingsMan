@@ -2,16 +2,24 @@ const express = require('express');
 const router = express.Router();
 const authController = require('../controller/authController');
 
-// GET login page
-router.get('/login', authController.getLoginPage);
+// Login route
+router.get('/login', (req, res) => {
+  res.render('login');
+});
 
-// POST login
-router.post('/login', authController.login);
+router.post(
+  '/login',
+  authController.login
+);
 
-// GET register page
-router.get('/register', authController.getRegisterPage);
-
-// POST register
-router.post('/register', authController.register);
-
-module.exports = router;
+// Register route
+router.get('/register', (req, res) => {
+    res.render('register');
+  });
+  
+  router.post(
+    '/register',authController.validate('register'),
+    authController.register
+  );
+  
+  module.exports = router;
