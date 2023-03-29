@@ -1,28 +1,30 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <link
-      href="https://fonts.googleapis.com/css?family=Quicksand"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="/css/home.css" />
-  </head>
 
-  <body>
-    <%- include ('components/navbar') %>
+<head>
+  <title>
+    <%= title %>
+  </title>
+  <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/home.css" />
+</head>
 
-    <!-- Main Content -->
-    <div class="wg_home section_padding" id="home">
-      <div class="wg_home-content">
-        <h1 class="header_text">Wingman</h1>
-        <p>The only Chicken Wing You will ever need in your entire life</p>
-      </div>
-      <div class="wg_home-image">
-        <img src="/images/Wingmanlogo.png" alt="Wingman Logo" />
-      </div>
+<body>
+  <!-- <%- include ('components/navbar') %> -->
+
+  <!-- Main Content -->
+  <div class="wg_home section_padding" id="home">
+    <div class="wg_home-content">
     </div>
+    <div class="wg_home-image">
+      <img src="/images/Wingmanlogo.png" alt="Wingman Logo" />
+    </div>
+    <p>The only Chicken Wing You will ever need in your entire life</p>
 
-    <%- include ('components/footer') %>
-  </body>
+  </div>
+  <button id="order-now" onclick="location.href='/login'">Order Now</button>
+
+  <!-- <%- include ('components/footer') %> -->
+</body>
+
 </html>

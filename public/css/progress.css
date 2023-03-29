@@ -119,3 +119,48 @@ body {
     top: 450px;
     left: 300px;
 }
+@media screen and (max-width: 768px) {
+    #map {
+        width: 300px;
+        height: 250px;
+        position: fixed;
+        left: 50%;
+        top: 350;
+        transform: translateX(-50%);
+    }
+
+    .wg_progress-detail {
+        width: 300px;
+        height: 300px;
+        font-size: 12px;
+        left: 50%;
+        top: 73%;
+    }
+}
+
+@media screen and (max-width: 390px) {
+    #map {
+        width: 250px;
+        height: 200px;
+        left: 50%;
+        top: 290;
+    }
+
+    .wg_progress #title {
+        font-size: 20px;
+    }
+
+    .wg_progress {
+        font-size: 15px;
+        margin: 0;
+    }
+
+    .wg_progress-detail {
+        width: 250px;
+        height: 250px;
+        font-size: 9px;
+        left: 50%;
+        top: 73%;
+    }
+}
+

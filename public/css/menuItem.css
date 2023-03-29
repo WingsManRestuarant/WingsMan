@@ -1,4 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@1,300;1,500&family=Kaushan+Script&display=swap');body {
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@1,300;1,500&family=Kaushan+Script&display=swap');
+
+body {
   background-color: #f9efe3;
 }
 
@@ -35,6 +37,8 @@
   display: flex;
   flex-direction: row;
   margin-top: 7rem;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .wg_menu-item_container-box {
@@ -65,6 +69,8 @@
 
   /* Prevent content from overflowing outside of box */
   overflow: hidden;
+  margin-bottom: 40px;
+
 }
 
 
@@ -135,6 +141,7 @@
   order: 3;
   flex-grow: 0;
 }
+
 .wg_menu-item_container-box_addToCart-select select {
   box-sizing: border-box;
 
@@ -183,4 +190,10 @@
   flex: none;
   order: 1;
   flex-grow: 0;
+}
+
+@media screen and (max-width: 390px) {
+  .wg_menu-item_title h1 {
+    font-size: 80px;
+  }
 }
