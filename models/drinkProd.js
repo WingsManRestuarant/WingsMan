@@ -14,6 +14,5 @@ const productSchema = new Schema({
 
 });
 
-// model name: 'Product' will be used to turn into a collection name in DB
-// 'Product' => 'product' + 's' => products
-module.exports = mongoose.model('Product', productSchema);
+
+module.exports = mongoose.model('drinkProd', productSchema);

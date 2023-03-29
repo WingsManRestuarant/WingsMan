@@ -1,4 +1,4 @@
-const products = [{
+const drinkProducts = [{
     imagePath:"/images/Drink/Coffee.png",
     title:"Coffee",
     price:35,
@@ -18,4 +18,4 @@ const products = [{
 },
 ]
 
-module.exports = products;
+module.exports = drinkProducts;
