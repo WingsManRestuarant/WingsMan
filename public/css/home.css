@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap');
 * {
   background-color: #f9efe3;
   font-family: "Quicksand", sans-serif;
@@ -54,43 +55,6 @@
   height: auto;
 }
 
-/* Media queries for smaller screens */
-
-@media only screen and (max-width: 768px) {
-  .wg_home {
-    flex-direction: column;
-    margin-left: 5%;
-    margin-right: 5%;
-  }
-
-  .wg_home-content {
-    margin-right: 0;
-    text-align: center;
-  }
-
-  .wg_home-content h1 {
-    font-size: 48px;
-    line-height: 60px;
-  }
-
-  .wg_home-content p {
-    font-size: 24px;
-    line-height: 30px;
-  }
-}
-
-@media only screen and (max-width: 390px) {
-  .wg_home-content h1 {
-    font-size: 50px;
-    line-height: 40px;
-  }
-
-  .wg_home-content p {
-    font-size: 16px;
-    line-height: 20px;
-  }
-}
-
 #order-now {
   position: fixed;
   display: flex;
@@ -110,4 +74,61 @@
 
 #order-now:hover {
   background-color: #ff4500;
+}
+
+/* Media queries for smaller screens */
+
+@media only screen and (max-width: 768px) {
+  .wg_home {
+    flex-direction: column;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+
+  p {
+    font-weight: 600;
+    font-size: 50px;
+    display: flex;
+    text-align: center;
+    align-items: baseline;
+    justify-content: center;
+    align-content: center;
+  }
+
+  #order-now {
+    top: 90%;
+    display: grid;
+    width: 400px;
+    height: 100px;
+    text-align: center;
+    align-items: baseline;
+    justify-content: center;
+    align-content: center;
+  }
+
+}
+
+@media only screen and (max-width: 390px) {
+  #order-now {
+    display: grid;
+    width: 200px;
+    height: 70px;
+    text-align: center;
+    align-items: baseline;
+    justify-content: center;
+    align-content: center;
+  }
+
+  p {
+    font-weight: 600;
+    font-size: 45px;
+    line-height: 45px;
+    display: flex;
+  }
+
+  .wg_home-image {
+    width: 400px;
+    width: 400px;
+
+  }
 }
