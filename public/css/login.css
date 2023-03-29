@@ -136,3 +136,9 @@ button {
     left: 37px;
     bottom: 2.5%;
 }
+
+@media (min-width: 768px) {
+    .inputbox {
+        width: 400px;
+    }
+}
