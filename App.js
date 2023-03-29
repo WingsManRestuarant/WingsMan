@@ -7,31 +7,26 @@ const cookieParser = require("cookie-parser")
 const bcrypt = require("bcrypt");
 const { body, validationResult } = require("express-validator");
 const mongoose = require('mongoose');
+const db = require('./utils/db');
 
 
-const db = mongoose.connection;
-mongoose.connect('mongodb+srv://admin:admin@cluster0.u8eno7n.mongodb.net/test', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-});
 
-
-db.on("error", () => console.log("Error in connecting to database"));
-db.once("open", () => console.log("Connected to Database"));
-
-app.set("view engine", "ejs");
-app.use(express.static("public"));
-app.use(bodyParser.urlencoded({ extended: true }));
-
+// Middleware
+app.set('view engine', 'ejs');
+app.use(express.static('public'));
+app.use(express.urlencoded({ extended: true }));
 
 app.use(cookieParser());
-app.use(
-  session({
-    secret: 'my_super_secret',
-    resave: false,
-    saveUninitialized: false
-  })
-);
+
+// Sessions
+
+app.use(session({
+  secret: 'mysecretkey',
+  resave: false,
+  saveUninitialized: true,
+
+}));
+
 
 const isLoggedIn = (req, res, next) => {
   if (!req.session.user) {
