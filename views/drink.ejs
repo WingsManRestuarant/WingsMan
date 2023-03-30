@@ -11,7 +11,7 @@
 
     <% productChunks.forEach(function(chunk) {
        chunk.forEach(function(product) { %>
-    <form action="/add-to-cart/<%= product.id %>" method="post"">
+    <form action="/add-to-cart/drink/<%= product.id %>" method="post"">
       <div class="wg_menu-item_container-box">
         <div class="wg_menu-item_container-box_image">
           <img src="<%= product.imagePath %>" alt="" />

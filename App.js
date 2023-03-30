@@ -74,9 +74,7 @@ app.use(addToCartRoute);
 
 
 
-app.get("/cart",isLoggedIn, function(req, res) {
-  res.render("cart");
-});
+
 
 app.get("/progress", isLoggedIn, function(req, res) {
   res.render("progress");

@@ -16,12 +16,17 @@
         </svg>
     </button>
 </div>
+
+<% if (product) { %>
 <div class="wg_cart_bill">
+    
     <div class="wg_cart_bill-title">
         <h1>deliver to this location</h1>
         <p>Chiang Mai, Thailand</p>
         <p>Bill Details</p>
-
+        <% products.forEach(function(product) { %>
+            
+        <% }); %>
     </div>
     <!-- <div class="wg_cart_bill-option">
         <p>Apply your coupon code</p>
@@ -33,5 +38,8 @@
         <button>Place Order</button>
     </div>
 </div>
+<% } else { %>
 
-</div>
+
+ <% } %>
+
