@@ -59,6 +59,24 @@ router.post("/add-to-cart/appetizer/:id", async function(req, res, next) {
     }
 });
 
+router.get('/reduce/:id', function(req, res, next){
+    const productId = req.params.id;
+    const cart = new Cart(req.session.cart ? req.session.cart : {});
+
+    cart.reduceByOne(productId);
+    req.session.cart = cart;
+    res.redirect('/cart')
+})
+
+router.get('/add/:id', function(req, res, next){
+    const productId = req.params.id;
+    const cart = new Cart(req.session.cart ? req.session.cart : {});
+
+    cart.addByOne(productId);
+    req.session.cart = cart;
+    res.redirect('/cart')
+})
+
 router.get("/cart", function(req, res, next) {
     if (!req.session.cart){
         return res.render('cart', {products: null});
