@@ -8,6 +8,8 @@
 <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
     integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
 
+<link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
+<script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
 
 <!-- <%- include ('components/cartNavbar') %> -->
 <div class="wg_cart-navbar">
@@ -35,8 +37,13 @@
         <p>Estimated Delivery Time</p>
     </div>
     <div class="wg_progress_map-detail_address">
-        <h1>Delivery Address</h1>
-        <p>Chiang Mai Thailand</p>
+        <h1>Delivery Address <input type="text" id="address-input">
+            <button id="locate" onclick="geocodeAddress()">Locate</button>
+        </h1>
+        <div class="input">
+
+        </div>
+        <p></p>
     </div>
     <div class="wg_progress_map-detail_order">
         <h1>Order Details</h1>
@@ -48,18 +55,6 @@
     <button id="home" onclick="location.href='/'">Home</button>
 </div>
 
-<!-- <div class="left-pic">
-        <img src="images/Progress/hands-taking-pizza 1.png" alt="">
-    </div>
-    
-    <div class="topRight-pic">
-        <img src="images/Progress/Capcicum 1.png" alt="">
-    </div>
-
-    <div class="topLeft-pic">
-        <img src="images/Progress/Haldi 1.png" alt="">
-    </div> -->
-
 
 <script>
     // leaflet script
@@ -68,10 +63,7 @@
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '© OpenStreetMap contributors'
     }).addTo(map);
-
-    // user location
-    var marker = L.marker([18.800886, 98.950828]).addTo(map);
-    marker.bindPopup("You are here");
+    L.Control.geocoder().addTo(map);
 
     // fixed restaurant coordinate 
     var circle = L.circle([18.810645, 98.947943], {
@@ -81,6 +73,25 @@
         radius: 100
     }).addTo(map);
     circle.bindPopup("Wingsman Restaurant");
+
+    // geocode the address entered by the user
+    function geocodeAddress() {
+        var address = document.getElementById('address-input').value;
+
+        // use the geocoding plugin to convert the address to GPS coordinates
+        L.Control.Geocoder.nominatim().geocode(address, function (results) {
+            var latlng = results[0].center;
+
+            // create a marker at the GPS coordinates and add it to the map
+            var marker = L.marker(latlng).addTo(map);
+
+            // set the view of the map to the GPS coordinates and zoom level
+            map.setView(latlng, 13);
+
+            var pElement = document.querySelector('.wg_progress_map-detail_address p');
+            pElement.innerHTML = 'Latitude: ' + latlng.lat + ', Longitude: ' + latlng.lng;
+        });
+    }
 
     // Get the current time
     var now = new Date();
