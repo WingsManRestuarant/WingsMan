@@ -4,7 +4,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "data:import": "node /seed/seederScript.js"
+    "data:import": "node /seed/seederScript.js",
+    "build": "npm run build:client && npm run build:server",
+    "build:client": "webpack --config webpack.client.config.js",
+    "build:server": "webpack --config webpack.server.config.js"
   },
   "repository": {
     "type": "git",
