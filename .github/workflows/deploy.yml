@@ -1,22 +1,33 @@
-name: deploy on push
-on: 
+name: Node.js app deployment
+
+on:
   push:
     branches:
       - main
 
 jobs:
-  deploy-app:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: check out the code to build server
-        uses: actions/checkout@v3
-      - name: copy files to server
-        uses: appleboy/scp-action@master
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Install Node.js
+        uses: actions/setup-node@v2
         with:
-          host: ${{secrets.HOST}}
-          username: ${{secrets.SSH_USER_NAME}}
-          port: ${{secrets.SSH_PORT}}
-          key: ${{secrets.SSH_KEY}}
-          source: "/App.js"
-          target: "/var/www/html"
-          strip_components: 1
+          node-version: '14.x'
+      - name: Install dependencies
+        run: npm ci
+      - name: Build
+        run: npm run build
+      - name: Deploy
+        uses: easingthemes/ssh-deploy@v2.3.4
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
+          REMOTE_USERNAME: ${{ secrets.REMOTE_USERNAME }}
+          REMOTE_PORT: ${{ secrets.REMOTE_PORT }}
+        with:
+          args: |
+            --source=dist/
+            --target=/var/www/html/
+            --exclude=".env"
