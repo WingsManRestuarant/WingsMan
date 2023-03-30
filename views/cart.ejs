@@ -17,29 +17,34 @@
     </button>
 </div>
 
-<% if (product) { %>
-<div class="wg_cart_bill">
+<% if (products) { %>
+    <div class="wg_cart_bill">
+        
+        <div class="wg_cart_bill-title">
+            <h1>deliver to this location</h1>
+            <p>Chiang Mai, Thailand</p>
+            <p>Bill Details</p>
+            <% products.forEach(function(product) { %>
+                <h1><%= product.item.title %></h1>
+                <p><%= product.qty %></p>
+                <p>price:<%= product.price %> $</p>
+                
+            <% }); %>
+            <p>Total: <%= totalPrice %> $</p>
+        </div>
+        <!-- <div class="wg_cart_bill-option">
+            <p>Apply your coupon code</p>
+        </div> -->
+        <div class="wg_cart_bill-detail">
+            <!-- <p>Bill Details</p> -->
+        </div>
+        <div class="wg_cary_bill-button">
+            <button>Place Order</button>
+        </div>
+    </div>
+    <% } else { %>
     
-    <div class="wg_cart_bill-title">
-        <h1>deliver to this location</h1>
-        <p>Chiang Mai, Thailand</p>
-        <p>Bill Details</p>
-        <% products.forEach(function(product) { %>
-            
-        <% }); %>
-    </div>
-    <!-- <div class="wg_cart_bill-option">
-        <p>Apply your coupon code</p>
-    </div> -->
-    <div class="wg_cart_bill-detail">
-        <!-- <p>Bill Details</p> -->
-    </div>
-    <div class="wg_cary_bill-button">
-        <button>Place Order</button>
-    </div>
-</div>
-<% } else { %>
-
-
- <% } %>
+    
+     <% } %>
+    
 

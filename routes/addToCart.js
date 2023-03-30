@@ -64,7 +64,7 @@ router.get("/cart", function(req, res, next) {
         return res.render('cart', {products: null});
     }
     var cart = new Cart(req.session.cart);
-    res.render('cart', {products: cart.generateArray()});
+    res.render('cart', {products: cart.generateArray(), totalPrice: cart.totalPrice});
 });
 
 
