@@ -1,7 +1,6 @@
 # Node.js and NPM
 node_modules/
 package-lock.json
-package.json
 npm-debug.log
 
 # Build output
