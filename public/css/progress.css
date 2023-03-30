@@ -65,29 +65,6 @@ body {
     border-bottom: 0.25px solid black;
 }
 
-/* .left-pic {
-    position: absolute;
-    width: 732px;
-    height: 765px;
-    left: -300px;
-    top: 315px;
-
-}
-
-.topRight-pic {
-    position: absolute;
-    width: 531px;
-    height: 822.36px;
-    left: 750px;
-    top: -85px;
-}
-
-.topRight-pic {
-    position: absolute;
-    left: 750px;
-    top: -85px;
-} */
-
 .wg_progress_button {
     width: 335px;
     height: 58px;
@@ -111,7 +88,17 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
 }
+#locate{
+    background-color: #f02c4c;
+    color: #FFFFFF;
+    border-radius: 5px;
+    border: none;
 
+}
+#address-input{
+    border: none;
+
+}
 #map {
     position: absolute;
     width: 335px;
@@ -119,9 +106,12 @@ body {
     top: 450px;
     left: 300px;
 }
+
+
+
 @media screen and (max-width: 768px) {
     #map {
-        width: 300px;
+        width: 400px;
         height: 250px;
         position: fixed;
         left: 50%;
@@ -130,7 +120,7 @@ body {
     }
 
     .wg_progress-detail {
-        width: 300px;
+        width: 450px;
         height: 300px;
         font-size: 12px;
         left: 50%;
