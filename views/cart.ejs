@@ -1,6 +1,5 @@
 <link rel="stylesheet" href="/css/cart.css">
 
-<!-- <%- include ('components/cartNavbar') %> -->
 <div class="wg_cart-navbar">
     <div class="wg_cart-navbar_image">
         <img src="/images/icon _Pizza Slice_.png" alt="">
@@ -19,32 +18,30 @@
 
 <% if (products) { %>
     <div class="wg_cart_bill">
-        
         <div class="wg_cart_bill-title">
-            <h1>deliver to this location</h1>
-            <p>Chiang Mai, Thailand</p>
             <p>Bill Details</p>
-            <% products.forEach(function(product) { %>
-                <h1><%= product.item.title %></h1>
-                <p><%= product.qty %></p>
-                <p>price:<%= product.price %> $</p>
-                
-            <% }); %>
-            <p>Total: <%= totalPrice %> $</p>
+            <div class="added">
+                <% products.forEach(function(product) { %>
+                    <h1>
+                        <%= product.item.title %>
+                            <a href="#">-</a><a href="#" class="border">
+                                <%= product.qty %>
+                            </a><a href="#">+</a>
+                            <p>price:<%= product.price %> $</p>
+                            <% }); %>
+                    </h1>
+            </div>
+
         </div>
-        <!-- <div class="wg_cart_bill-option">
-            <p>Apply your coupon code</p>
-        </div> -->
-        <div class="wg_cart_bill-detail">
-            <!-- <p>Bill Details</p> -->
-        </div>
-        <div class="wg_cary_bill-button">
-            <button>Place Order</button>
-        </div>
+
+    </div>
+    <p id="totalPrice">Total: <%= totalPrice %> $</p>
+
+    <div class="wg_cary_bill-button">
+        <button onclick="window.location.href='/progress'">Place Order
     </div>
     <% } else { %>
-    
-    
-     <% } %>
-    
-
+        <div class="empty">
+            <p>There is no item in the cart</p>
+        </div>
+        <% } %>
