@@ -1,10 +1,10 @@
-const drinkData = require('./data/drinkProd');
-const appetizerData = require('./data/appetizerProd');
-const mainData = require('./data/mainProd');
-const db = require('./utils/db');
-const Product1 = require('./models/appetizerProd');
-const Product2 = require('./models/drinkProd');
-const Product3 = require('./models/mainProd');
+const drinkData = require('../data/drinkProd');
+const appetizerData = require('../data/appetizerProd');
+const mainData = require('../data/mainProd');
+const db = require('../utils/db');
+const Product1 = require('../models/appetizerProd');
+const Product2 = require('../models/drinkProd');
+const Product3 = require('../models/mainProd');
 
 
 const importData = async () => {
