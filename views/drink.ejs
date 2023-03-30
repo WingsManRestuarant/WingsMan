@@ -9,7 +9,8 @@
 
   <div class="wg_menu-item_container">
 
-    <% products.forEach(function(product) { %>
+    <% productChunks.forEach(function(chunk) {
+       chunk.forEach(function(product) { %>
     <form action="/add-to-cart" method="post">
       <div class="wg_menu-item_container-box">
         <div class="wg_menu-item_container-box_image">
@@ -36,6 +37,7 @@
         </div>
       </div>
     </form>
+    <% }); %>
     <% }); %>
   </div>
 </div>

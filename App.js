@@ -8,9 +8,11 @@ const bcrypt = require("bcrypt");
 const { body, validationResult } = require("express-validator");
 const mongoose = require('mongoose');
 
+//* Import routes
 const authRoutes = require("./routes/authRoutes");
-const db = require('./utils/db');
 const shopRoutes = require('./routes/shop');
+
+const db = require('./utils/db');
 
 //*all product
 const appetizerProd =require('./models/appetizerProd')
@@ -59,26 +61,51 @@ app.get("/category", isLoggedIn,  function(req, res) {
   res.render("category");
 });
 
-app.get("/category/appetizer", isLoggedIn, function(req, res) {
-  res.render("appetizer");
-});
 
-app.get("/category/main", isLoggedIn, function(req, res) {
-  res.render("main");
-});
-
-
-app.get("/category/drink", isLoggedIn, function(req, res , next) {
-  drinkProd.find(function(err,docs){
-    var productChunks =[];
+//
+app.get("/category/appetizer", isLoggedIn, function(req, res, next) {
+  appetizerProd.find().then(function(docs) {
+    var productChunks = [];
     var chunkSize = 3;
-    for(var i = 0; i< docs.length; i += chunkSize){
-      productChunks.push(docs.slice(i,i+chunkSize));
+    for (var i = 0; i < docs.length; i += chunkSize) {
+      productChunks.push(docs.slice(i, i + chunkSize));
     }
-    res.render("drink", {title: 'Shopping Cart', products: products2});
+    res.render("appetizer", { title: 'Shopping Cart', productChunks: productChunks });
+  }).catch(function(err) {
+    return next(err);
   });
-  
 });
+
+
+app.get("/category/main", isLoggedIn, function(req, res, next) {
+  mainProd.find().then(function(docs) {
+    var productChunks = [];
+    var chunkSize = 3;
+    for (var i = 0; i < docs.length; i += chunkSize) {
+      productChunks.push(docs.slice(i, i + chunkSize));
+    }
+    res.render("main", { title: 'Shopping Cart', productChunks: productChunks });
+  }).catch(function(err) {
+    return next(err);
+  });
+});
+
+
+app.get("/category/drink", isLoggedIn, function(req, res, next) {
+  drinkProd.find().then(function(docs) {
+    var productChunks = [];
+    var chunkSize = 3;
+    for (var i = 0; i < docs.length; i += chunkSize) {
+      productChunks.push(docs.slice(i, i + chunkSize));
+    }
+    res.render("drink", { title: 'Shopping Cart', productChunks: productChunks });
+  }).catch(function(err) {
+    return next(err);
+  });
+});
+
+  
+
 
 
 
