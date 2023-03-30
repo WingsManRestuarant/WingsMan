@@ -4,58 +4,53 @@ const ejs = require("ejs");
 const app = express();
 const session = require("express-session");
 const cookieParser = require("cookie-parser")
-const bcrypt = require("bcrypt");
-const { body, validationResult } = require("express-validator");
-const mongoose = require('mongoose');
-const MongoStore = require('connect-mongo')(session);
 
-
-//* Import routes
+//* -----------------------------------------Import routes-----------------------------------------
 const authRoutes = require("./routes/authRoutes");
-const shopRoutes = require('./routes/shop');
 const drinkRoute = require("./routes/drink");
 const appetizerRoute = require("./routes/appetizer");
 const mainRoute = require("./routes/main");
 const addToCartRoute = require("./routes/addToCart");
-
+//* -------------------------------------------------------------------------------------------------
 
 
 const db = require('./utils/db');
 
-//*all product
+
+//* ---------------------------Product----------------------------------------------------------------
 const appetizerProd =require('./models/appetizerProd')
 const drinkProd =require('./models/drinkProd')
 const mainProd =require('./models/mainProd')
 
-
+//* --------------------------------------------------------------------------------------------------
 
 
 // Middleware
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
-
-app.use(cookieParser());
-
-// Sessions
-
-app.use(session({
-  secret: 'mysecretkey',
-  resave: false,
-  saveUninitialized: true,
-  store:new MongoStore({mongooseConnection: mongoose.connection}),
-  cookie: { maxAge: 180 * 60 * 1000 }
-}));
-
 const isLoggedIn = (req, res, next) => {
   if (!req.session.user) {
     return res.redirect('/login');
   }
   next();
 };
+app.use(cookieParser());
 
-// app.use(shopRoutes); //! some error
+//* ///////////////////////////////////////////Sessions/////////////////////////////////////////////////////
+app.use(session({
+  secret: 'mysecretkey',
+  resave: false,
+  saveUninitialized: true,
+  cookie: { maxAge: 180 * 60 * 1000 }
+}));
+//* ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+
+app.use(function(req, res, next) {
+  res.locals.session = req.session;
+  next();
+});
 
 app.get("/", function(req, res) {
   res.render("home", {
@@ -75,7 +70,8 @@ app.use("/category/drink",isLoggedIn, drinkRoute(drinkProd));
 
 app.use("/", authRoutes);
   
-app.use(addToCartRoute)
+app.use(addToCartRoute);
+
 
 
 app.get("/cart",isLoggedIn, function(req, res) {

@@ -4,20 +4,22 @@ const router = express.Router();
 const Cart = require('../models/cart')
 const drinkProd = require('../models/drinkProd');
 
-router.get("/add-to-cart/:id", function(req,res,next){
-    var productId = req.params.id;
-    var cart = new Cart(req.session.cart ? req.session.cart : {});
+router.post("/add-to-cart/:id", async function(req, res, next) {
+    const productId = req.params.id;
+    const cart = new Cart(req.session.cart ? req.session.cart : {});
 
-    drinkProd.findById(productId, function(err, product){
-        if (err){
-            return res.redirect('/');
+    try {
+        const product = await drinkProd.findById(productId);
+        if (!product) {
+            return res.redirect("/");
         }
         cart.add(product, product.id);
         req.session.cart = cart;
-        console.log(req.session.cart)
-        res.redirect('/');
-    
-    });
+        console.log(req.session.cart);
+        res.redirect("/category/drink");
+    } catch (err) {
+        next(err);
+    }
 });
 
 module.exports = router;
