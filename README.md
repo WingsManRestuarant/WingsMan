@@ -1,12 +1,16 @@
-Info of My team github
+# Team GitHub Information
 
-642115008 Jirapat Namwong
-  Fork User: patrickhum  mail: jirapat_na@cmu.ac.th
-  
- 
-642115038 Yotsawat Lekwongthanasin
-  Fork User:  -Yotsawat Lekwongthanasin (from laptop)
-              -Zesshi (from pc at home)
-                mail: kopmat65@gmail.com
-              -Yotsawat (from github.com)
-                
+This is the GitHub information for the team composed of Jirapat Namwong and Yotsawat Lekwongthanasin.
+
+## Jirapat Namwong
+- GitHub Username: `patrickhum`
+- Email: `jirapat_na@cmu.ac.th`
+
+## Yotsawat Lekwongthanasin
+- GitHub Usernames:
+  - `Yotsawat Lekwongthanasin` (from laptop)
+  - `Zesshi` (from PC at home)
+  - `Yotsawat` (from github.com)
+- Email: `kopmat65@gmail.com`
+
+We hope you find our GitHub repositories useful!
