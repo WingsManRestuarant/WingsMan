@@ -10,7 +10,9 @@ This is the GitHub information for the team composed of Jirapat Namwong and Yots
 - GitHub Usernames:
   - `Yotsawat Lekwongthanasin` (from laptop)
   - `Zesshi` (from PC at home)
+  - `Ze55hi` 
   - `Yotsawat` (from github.com)
 - Email: `kopmat65@gmail.com`
+- Email: `yotsawat@cmu.ac.th`
 
 We hope you find our GitHub repositories useful!
