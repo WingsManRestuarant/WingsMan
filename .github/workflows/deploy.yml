@@ -1,21 +1,45 @@
-name: deploy on push
-on: 
+name: deploy frontend application
+'on':
   push:
     branches:
       - main
-
 jobs:
-  deploy-app:
+  docker:
     runs-on: ubuntu-latest
     steps:
-      - name: check out the code to build server
-        uses: actions/checkout@v3
-      - name: copy file to server
-        uses: appleboy/scp-action@master
+      -
+        name: Checkout
+        uses: actions/checkout@v2
+      
+      -
+        name: Set up QEMU
+        uses: docker/setup-qemu-action@v1
+      -
+        name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+      -
+        name: Login to DockerHub
+        uses: docker/login-action@v1
         with:
-          host: ${{secrets.HOST}}
-          username: ${{secrets.SSH_USER_NAME}}
-          port: ${{secrets.SSH_PORT}}
-          key: ${{secrets.SSH_KEY}}
-          source: "./app.js"
-          target: "/var/www/html"
+          username: ${{ secrets.DOCKER_HUB_USERNAME }}
+          password: ${{ secrets.DOCKER_HUB_TOKEN }}
+      -
+        name: prepare the docker-compose run
+        run: |
+              ls -l
+      -
+        name: Build and push
+        uses: docker/build-push-action@v2
+        with:
+          context: .
+          push: true
+          tags: kopma65/wingman-project-2-main:latest
+      -
+        name: prepare the docker-compose run
+        run: |
+              mkdir wingman-project-2-main
+              cp docker-compose.yml wingman-project-2-main/docker-compose.yml
+              cd wingman-project-2-main
+              docker-compose -H ${{ secrets.HOST_SERVER  }} down
+              docker-compose -H ${{ secrets.HOST_SERVER  }} pull
+              docker-compose -H ${{ secrets.HOST_SERVER  }} up -d

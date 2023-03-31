@@ -1,12 +1,8 @@
-version: "3"
+version: '3'
 services:
   app:
-    build:
-      context: .
-      dockerfile: Dockerfile
+    container_name: finaldeploy-main
+    restart: always
+    image:  kopma65/wingman-project-2-main:latest
     ports:
-      - "3000:3000"
-    volumes:
-      - .:/app
-    environment:
-      NODE_ENV: development
+      - "8081:3000"
